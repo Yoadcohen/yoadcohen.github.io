@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoad Cohen — AI GTM Systems Builder</title>
+<title>Yoad Cohen — AI Automation & GTM Systems Builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -53,6 +53,16 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+  }
+
+  .sidebar-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 2px solid rgba(74, 158, 142, 0.35);
+    display: block;
   }
 
   .sidebar-name {
@@ -264,6 +274,48 @@
     font-size: 11px;
     color: var(--muted);
     line-height: 1.4;
+  }
+
+  /* TESTIMONIAL */
+  .testimonial-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 52px;
+    position: relative;
+  }
+
+  .testimonial-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .testimonial-quote {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 760px;
+    padding-left: 20px;
+    border-left: 3px solid var(--teal);
+    margin-bottom: 14px;
+    font-style: italic;
+    letter-spacing: 0.005em;
+  }
+
+  .testimonial-attribution {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 23px;
+  }
+
+  .testimonial-attribution-name {
+    color: var(--ink);
+    font-weight: 500;
   }
 
   /* WHAT I DO */
@@ -671,6 +723,9 @@
     .page-header { padding: 36px 28px 32px; }
     .outcomes-bar { padding: 28px 28px; }
     .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-bar { padding: 28px 28px; }
+    .testimonial-quote { font-size: 17px; padding-left: 16px; }
+    .testimonial-attribution { padding-left: 19px; }
     .what-i-do { padding: 32px 28px; }
     .wid-list { grid-template-columns: 1fr; }
     .content-section { padding: 40px 28px 36px; }
@@ -696,8 +751,9 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
+    <img src="avatar.jpg" alt="Yoad Cohen" class="sidebar-avatar" onerror="this.style.display='none'">
     <div class="sidebar-name">Yoad Cohen</div>
-    <div class="sidebar-role">AI GTM Systems Builder</div>
+    <div class="sidebar-role">AI Automation &amp; GTM Systems Builder</div>
 
     <div class="sidebar-section">
       <div class="sidebar-section-label">Navigation</div>
@@ -715,33 +771,39 @@
       <div class="sidebar-section-label">Core Tools</div>
       <div class="stack-group">
         <div class="stack-group-label">AI / LLM</div>
-        <span class="stack-tag">Claude API</span>
-        <span class="stack-tag">RAG / pgvector</span>
-        <span class="stack-tag">Embeddings</span>
+        <span class="stack-tag">Claude Sonnet 4.6</span>
+        <span class="stack-tag">pgvector RAG</span>
+        <span class="stack-tag">Voyage AI</span>
       </div>
       <div class="stack-group">
         <div class="stack-group-label">Automation</div>
         <span class="stack-tag">n8n</span>
+        <span class="stack-tag">Docker</span>
         <span class="stack-tag">Webhooks</span>
-        <span class="stack-tag">Self-hosted</span>
       </div>
       <div class="stack-group">
         <div class="stack-group-label">GTM</div>
         <span class="stack-tag">Apollo</span>
-        <span class="stack-tag">Lemlist</span>
         <span class="stack-tag">HubSpot</span>
+        <span class="stack-tag">Gmail API</span>
       </div>
       <div class="stack-group">
         <div class="stack-group-label">Data</div>
         <span class="stack-tag">Supabase</span>
         <span class="stack-tag">Firecrawl</span>
-        <span class="stack-tag">Public APIs</span>
+        <span class="stack-tag">IRS BMF (1.9M)</span>
+      </div>
+      <div class="stack-group">
+        <div class="stack-group-label">Scripting</div>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">JavaScript</span>
       </div>
     </div>
 
     <div class="sidebar-footer">
-      Built and owned end-to-end.<br>
-      No agency. No outsourcing.
+      20 workflows · 2 n8n instances · 1 Postgres.<br>
+      Every service owned, every credential managed.
     </div>
   </aside>
 
@@ -750,18 +812,18 @@
 
     <!-- PAGE HEADER -->
     <div class="page-header" id="top">
-      <div class="ph-eyebrow">// gtm engineering · ai automation · revops</div>
+      <div class="ph-eyebrow">// gtm engineering · applied ai · revops</div>
       <div class="ph-name">Yoad Cohen</div>
-      <h1>AI GTM Systems Builder</h1>
-      <p class="ph-subheadline">I design automation systems that increase pipeline and reduce manual work for sales teams.</p>
-      <p class="ph-credibility">Currently building and deploying AI-driven GTM systems inside a B2B SaaS company.</p>
-      <p class="ph-summary">I connect CRM platforms, AI models, and enrichment pipelines into systems that sales teams actually use every day. The goal is always the same: take the manual, repetitive work off the rep's plate and let the pipeline move faster without adding headcount.</p>
+      <h1>AI Automation &amp; GTM Systems Builder</h1>
+      <p class="ph-subheadline">I build the systems that replace manual SDR work with production AI pipelines.</p>
+      <p class="ph-credibility">Currently at Crowded Technologies, the compliance-first CFO suite for 501(c) organizations. Series A (led by Flashpoint Capital), actively raising Series B, named to CB Insights' 2025 Fintech 100. 20 production workflows shipped across two n8n instances (18 self-hosted on a Mac Mini + 2 on n8n Cloud) with 900+ production executions logged across 3–4 months of active development.</p>
+      <p class="ph-summary">I spent a year as an SDR at Crowded before moving into this role. I started experimenting with AI automation in late 2025 while still on the SDR team and moved into the builder role full-time in February 2026. Everything I build is the tool I wished I had while still doing the work manually. The pipeline I run today sources nonprofits from the public IRS Business Master File, enriches each from multiple third-party sources, classifies its organizational structure using a 10-level evidence hierarchy, picks qualifying contacts, writes a four-email sequence tuned to the structure type, verifies deliverability at the SMTP layer, sends, and handles replies, clicks, bounces, and out-of-office responses autonomously.</p>
       <div class="ph-pills">
         <span class="ph-pill">GTM Engineering</span>
-        <span class="ph-pill">AI Sales Automation</span>
-        <span class="ph-pill">RevOps</span>
-        <span class="ph-pill">CRM Architecture</span>
-        <span class="ph-pill">Outbound Infrastructure</span>
+        <span class="ph-pill">AI SDR Systems</span>
+        <span class="ph-pill">RAG + Structured Outputs</span>
+        <span class="ph-pill">Deliverability Engineering</span>
+        <span class="ph-pill">Claude + n8n + Supabase</span>
       </div>
     </div>
 
@@ -770,21 +832,30 @@
       <div class="outcomes-label">// key outcomes</div>
       <div class="outcomes-grid">
         <div class="outcome-box">
-          <span class="outcome-val">5x</span>
-          <span class="outcome-lbl">Increase in outbound capacity with no new headcount</span>
+          <span class="outcome-val">~$187K</span>
+          <span class="outcome-lbl">pipeline generated from the autonomous AI SDR since going live</span>
         </div>
         <div class="outcome-box">
-          <span class="outcome-val">45 min</span>
-          <span class="outcome-lbl">Saved per contact through automated research and email drafting</span>
+          <span class="outcome-val">19 opps</span>
+          <span class="outcome-lbl">booked to AE calendars: 6 enterprise + 13 mid-market</span>
         </div>
         <div class="outcome-box">
-          <span class="outcome-val">Under 2 min</span>
-          <span class="outcome-lbl">Inbound lead response time, fully automated</span>
+          <span class="outcome-val">5% → 60%</span>
+          <span class="outcome-lbl">cold outbound open rate (~12x lift) with a 25% click rate</span>
         </div>
         <div class="outcome-box">
-          <span class="outcome-val">5 systems</span>
-          <span class="outcome-lbl">Built and deployed for a live sales team, not prototypes</span>
+          <span class="outcome-val">~80% lift</span>
+          <span class="outcome-lbl">in team-wide pipeline after AE Brief Generator adoption</span>
         </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div class="testimonial-bar">
+      <div class="testimonial-label">// what leadership says</div>
+      <blockquote class="testimonial-quote">"These automations have become one of our top channels for generating pipeline for our account executives. The scale of outreach Yoad built is driving a measurable lift in inbound website activity on top of the pipeline it creates for our AEs."</blockquote>
+      <div class="testimonial-attribution">
+        <span class="testimonial-attribution-name">Daniel Grunstein</span> &middot; CEO and Co-Founder, Crowded Technologies
       </div>
     </div>
 
@@ -806,10 +877,10 @@
       <h2>What I built</h2>
 
       <div class="scope-summary">
-        <div class="scope-item"><div class="scope-dot"></div>5 AI-driven GTM systems built and deployed across outbound automation, inbound triage, data enrichment, and CRM intelligence</div>
-        <div class="scope-item"><div class="scope-dot"></div>Full ownership on every project: architecture, prompt design, API integrations, workflow logic, CRM writeback, and deployment</div>
-        <div class="scope-item"><div class="scope-dot"></div>All systems are in active use by a real sales team with documented workflows and rep adoption, not internal demos</div>
-        <div class="scope-item"><div class="scope-dot"></div>Priorities set in collaboration with sales leadership, tied directly to pipeline targets and a company fundraising milestone</div>
+        <div class="scope-item"><div class="scope-dot"></div>20 production workflows across two n8n instances (18 local + 2 Cloud), spanning the AI SDR pipeline, AE briefing, inbound triage, deliverability, reply intelligence, click attribution, Salesforce sync, and target-pool orchestration</div>
+        <div class="scope-item"><div class="scope-dot"></div>Full ownership on every system: architecture, schema design, prompt engineering, API integration, deployment, and observability</div>
+        <div class="scope-item"><div class="scope-dot"></div>All systems live in production at Crowded Technologies, actively used by 3 AEs and the Director of Partnerships on a daily 4x schedule with no human in the loop</div>
+        <div class="scope-item"><div class="scope-dot"></div>Priorities co-designed with sales leadership and tied to pipeline targets and a fundraising milestone</div>
       </div>
 
       <!-- System 1 -->
@@ -817,9 +888,9 @@
         <div class="sc-header">
           <div>
             <div class="sc-num">project_01</div>
-            <div class="sc-name">AI Outbound Automation System</div>
-            <div class="sc-value">Replaces manual prospecting, research, and email writing with a fully automated pipeline from raw data to booked meetings.</div>
-            <p class="sc-problem">Reps were spending 60 to 70 percent of their day on tasks that were not selling. Leadership needed to scale outbound volume significantly without growing the team or the budget.</p>
+            <div class="sc-name">AI SDR</div>
+            <div class="sc-value">An autonomous AI SDR that turns the public IRS Business Master File into personalized, deliverability-verified email sequences. Runs 4x daily, zero human in the loop. One of the highest revenue-generating channels at Crowded since going live: ~$187K in pipeline and 19 opportunities booked to AE calendars (6 enterprise + 13 mid-market).</div>
+            <p class="sc-problem">SDR teams spend 60–70% of their day on research, enrichment, and email drafting. That is the exact work most amenable to automation. The last generation of AI-SDR vendors prompt-engineered the email and called it done. That does not work in nonprofit outbound, where a misclassified org structure produces copy that reads alien to a compliance officer and gets spam-filed.</p>
           </div>
           <div class="sc-toggle">+</div>
         </div>
@@ -827,32 +898,36 @@
           <div class="sc-grid">
             <div class="sc-block full">
               <div class="sc-block-label">What I built</div>
-              <p class="sc-block-text">Designed and implemented a fully autonomous outbound pipeline running on a self-hosted server. The system ingests raw prospect data, enriches contacts through multiple API integrations, runs ICP classification and fit-scoring using a rubric co-developed with sales leadership, ranks decision-makers by role priority, and generates personalized outreach grounded in a proprietary AI knowledge base. CRM sequences trigger automatically with no rep involvement at any stage. I owned the full build: data flow, API orchestration, prompt engineering, CRM integration, and infrastructure.</p>
+              <p class="sc-block-text">13 sub-workflows on self-hosted n8n, orchestrated by a central scheduler firing at 8/11/14/17 EDT. WF1 Lead Sourcing queries the 1.9M-row IRS BMF and dedupes against Salesforce customers via pg_trgm fuzzy name match. WF2 Enrichment fans out in parallel to CauseIQ, ProPublica 990 data, IRS group-exemption registry, and a self-hosted Firecrawl Docker stack for website scraping. WF3 Classification runs Claude Sonnet 4.6 with a cached 26-document knowledge base to produce a 10-level evidence hierarchy verdict and a 0–100 fit score. WF4 Contact Discovery combines Apollo + Firecrawl + Claude extraction, filtered through a granular role blocklist and board-member heuristics. WF5 Email Generation produces a per-contact 4-email sequence with structure-specific prompt variants, prompt-cached system messages, and Quality Gate validation. WF6 Sender runs hourly, per-persona mailbox, SMTP-verified at send time, with per-contact URL rewriting for downstream click attribution.</p>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Tools used</div>
               <div class="tool-chips">
-                <span class="tool-chip">Claude API</span>
+                <span class="tool-chip">Claude Sonnet 4.6</span>
                 <span class="tool-chip">n8n (self-hosted)</span>
-                <span class="tool-chip">Apollo.io</span>
-                <span class="tool-chip">Lemlist</span>
-                <span class="tool-chip">Supabase + pgvector</span>
-                <span class="tool-chip">Firecrawl</span>
-                <span class="tool-chip">Public data APIs</span>
-                <span class="tool-chip">Webhooks</span>
+                <span class="tool-chip">Supabase Postgres 17</span>
+                <span class="tool-chip">pg_trgm</span>
+                <span class="tool-chip">Apollo</span>
+                <span class="tool-chip">CauseIQ</span>
+                <span class="tool-chip">ProPublica</span>
+                <span class="tool-chip">Firecrawl (self-hosted)</span>
+                <span class="tool-chip">Reoon SMTP</span>
+                <span class="tool-chip">Gmail API</span>
+                <span class="tool-chip">IRS BMF (1.9M rows)</span>
+                <span class="tool-chip">Python (ETL + deploy)</span>
               </div>
             </div>
             <div class="sc-block">
-              <div class="sc-block-label">Collaboration and context</div>
-              <p class="sc-block-text">ICP scoring rubric and sequence routing logic were co-designed with the Head of Sales. Automation priorities were tied directly to pipeline metrics needed ahead of a fundraising milestone.</p>
+              <div class="sc-block-label">Technical ownership</div>
+              <p class="sc-block-text">Built additive-only: every schema change is an ADD migration with constraint updates. Six production migrations shipped in April alone with zero downtime. The orchestrator holds no business logic, only batching, gating, and logging. Every sub-workflow is single-responsibility and independently deployable. Claude API cost for the entire pipeline runs ~$150–200/month thanks to aggressive prompt caching across every classification and email call.</p>
             </div>
           </div>
           <div class="sc-block" style="border-radius:8px; padding:14px 16px; background:var(--sand); margin-bottom:12px;">
             <div class="sc-block-label">Business impact</div>
             <div class="sc-impact-row">
-              <div class="impact-box"><span class="impact-val">~70%</span><span class="impact-lbl">Rep selling time reclaimed</span></div>
-              <div class="impact-box"><span class="impact-val">5x</span><span class="impact-lbl">Outbound capacity</span></div>
-              <div class="impact-box"><span class="impact-val">0</span><span class="impact-lbl">Headcount added</span></div>
+              <div class="impact-box"><span class="impact-val">~$187K</span><span class="impact-lbl">Pipeline generated</span></div>
+              <div class="impact-box"><span class="impact-val">19 opps</span><span class="impact-lbl">6 enterprise + 13 mid-market</span></div>
+              <div class="impact-box"><span class="impact-val">12x opens</span><span class="impact-lbl">5% → 60% cold open rate</span></div>
             </div>
           </div>
         </div>
@@ -863,9 +938,9 @@
         <div class="sc-header">
           <div>
             <div class="sc-num">project_02</div>
-            <div class="sc-name">Automated Research and Email Drafting System</div>
-            <div class="sc-value">Saves 45 minutes of prep per contact by delivering a research brief and three email drafts directly inside the CRM the moment a rep starts a sequence.</div>
-            <p class="sc-problem">Every time a rep added a contact to a sequence, they spent 30 to 45 minutes on research and email writing. This was the single largest time drain on the team and a direct drag on pipeline throughput.</p>
+            <div class="sc-name">AE Pre-Call Brief Generator (Inbound + Outbound)</div>
+            <div class="sc-value">When a prospect enters an Apollo sequence, a webhook fires. Around 45 seconds later the AE has a full pre-call brief and three ready-to-use email drafts written directly into Apollo custom fields. Live since March, used dozens of times per day by 3 AEs and the Director of Partnerships across both inbound and outbound motions. Prep time per contact dropped from 5–10 minutes to under 30 seconds, correlating with a ~80% lift in team-wide pipeline and an open-rate jump from ~5% to ~60% with a 25% click rate.</div>
+            <p class="sc-problem">Before this system, every AE was spending 5–10 minutes per contact pulling data from CauseIQ, HubSpot, ProPublica, and each prospect's website by hand before sending an email or making a call. Multiply by dozens of prospects per week per rep. That was the single largest time drain in the GTM function and the biggest reason AE outreach was sitting at a ~5% open rate.</p>
           </div>
           <div class="sc-toggle">+</div>
         </div>
@@ -873,31 +948,33 @@
           <div class="sc-grid">
             <div class="sc-block full">
               <div class="sc-block-label">What I built</div>
-              <p class="sc-block-text">Designed and implemented a real-time webhook integration between the CRM sequence trigger and an automation pipeline. When a contact enters any sequence, the system pulls CRM fields, scrapes the prospect's website, retrieves relevant account data, and combines everything with context from the AI knowledge base. The model returns a pre-call research brief and three sequenced email drafts, each with a different angle, written in the rep's voice. I built the CRM writeback logic to populate eight custom fields per contact. End-to-end from trigger to populated CRM: under 60 seconds.</p>
+              <p class="sc-block-text">Two forked n8n Cloud workflows (outbound + inbound) that share 20 of 27 code nodes byte-for-byte. They diverge at the Brain prompt and the email prompt based on lead context. Pipeline: Apollo webhook → contact lookup → Supabase org_cache (30-day TTL) → CauseIQ match/profile/personnel → ProPublica 990 → Firecrawl deep scrape → Claude website parser → Compile Context (a 38KB node building a 15-section context blob) → Claude Brain (fit scoring + structure classification) → Claude Email V2 (three 400–650 character drafts with role-aware angles) → a 12-check Quality Gate → PATCH 10 Apollo custom fields → Supabase enrichment_log. The inbound variant adds a HubSpot Enrichment node pulling 34 visitor-tracking properties (full RB2B set) and threads a warmer tone through the email prompt, with explicit anti-tracking-admission rules so emails never sound like "we saw you on our website."</p>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Tools used</div>
               <div class="tool-chips">
-                <span class="tool-chip">Apollo.io (webhooks + custom fields)</span>
-                <span class="tool-chip">n8n</span>
-                <span class="tool-chip">Claude API</span>
+                <span class="tool-chip">Apollo webhooks</span>
+                <span class="tool-chip">n8n Cloud</span>
+                <span class="tool-chip">Claude (3 calls/lead)</span>
+                <span class="tool-chip">Supabase</span>
                 <span class="tool-chip">Firecrawl</span>
-                <span class="tool-chip">Supabase RAG</span>
-                <span class="tool-chip">Public APIs</span>
+                <span class="tool-chip">CauseIQ</span>
+                <span class="tool-chip">ProPublica</span>
+                <span class="tool-chip">HubSpot (34 properties)</span>
                 <span class="tool-chip">JSON schema output</span>
               </div>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Technical ownership</div>
-              <p class="sc-block-text">Designed the JSON output schema for structured LLM responses, engineered prompts for consistent voice across the team, and built fallback logic for incomplete enrichment data. Writeback architecture was designed to fit directly into the existing sales workflow.</p>
+              <p class="sc-block-text">Prompt caching (anthropic-beta: prompt-caching-2024-07-31) on all 3 Claude calls with 6–8K-token cached system prompts. Structured outputs guarded by a 3-layer JSON parser (as-is → brace-balance repair → field-by-field regex recovery) so the pipeline survives truncated Claude responses. Hardcoded fallback emails ship with the workflow so AEs always have usable drafts even when the Claude Email call fails entirely. The downstream effect is the quieter win: AEs now come into every call with battle cards ready, know the right talking points, and sound informed and relatable instead of like another cold caller, which lifted conversation-to-demo conversion when prospects pick up the phone.</p>
             </div>
           </div>
           <div class="sc-block" style="border-radius:8px; padding:14px 16px; background:var(--sand); margin-bottom:0;">
             <div class="sc-block-label">Business impact</div>
             <div class="sc-impact-row">
-              <div class="impact-box"><span class="impact-val">45 min</span><span class="impact-lbl">Saved per contact</span></div>
-              <div class="impact-box"><span class="impact-val">3</span><span class="impact-lbl">Emails auto-drafted per contact</span></div>
-              <div class="impact-box"><span class="impact-val">Real-time</span><span class="impact-lbl">Brief in CRM on trigger</span></div>
+              <div class="impact-box"><span class="impact-val">5–10 min → &lt;30 sec</span><span class="impact-lbl">Prep time per contact</span></div>
+              <div class="impact-box"><span class="impact-val">~80% lift</span><span class="impact-lbl">Team-wide pipeline post-adoption</span></div>
+              <div class="impact-box"><span class="impact-val">5% → 60%</span><span class="impact-lbl">Open rate + 25% click rate</span></div>
             </div>
           </div>
         </div>
@@ -908,9 +985,9 @@
         <div class="sc-header">
           <div>
             <div class="sc-num">project_03</div>
-            <div class="sc-name">Prospect Scoring and List Intelligence Pipeline</div>
-            <div class="sc-value">Converts raw, unstructured account data into a scored, ranked, CRM-ready prospect list with no manual sorting required.</div>
-            <p class="sc-problem">Raw public databases required significant interpretation before accounts could be used for outbound. Reps were manually sorting through hundreds of records, which slowed list-building and introduced inconsistency across the team.</p>
+            <div class="sc-name">Nonprofit Classification &amp; Evidence Hierarchy</div>
+            <div class="sc-value">A structured-output classification system that maps any 501(c) nonprofit to one of four organizational structure types using a 10-level evidence priority chain. Feeds every downstream email and fit-score decision in the pipeline.</div>
+            <p class="sc-problem">Generic AI-SDR tools treat all nonprofits the same. In reality, Group Exemption orgs (many chapters under one IRS authorization), Same-EIN orgs (one EIN, many sub-units), Loose Affiliation networks, and Single Entity nonprofits each have completely different pain points, and completely different product fits. A misclassification doesn't just hurt conversion; it makes the email read wrong to a compliance professional, which is the single worst outcome in this vertical.</p>
           </div>
           <div class="sc-toggle">+</div>
         </div>
@@ -918,30 +995,33 @@
           <div class="sc-grid">
             <div class="sc-block full">
               <div class="sc-block-label">What I built</div>
-              <p class="sc-block-text">Designed and deployed a batch processing pipeline that ingests raw account data from CSV uploads, public APIs, and CRM exports. It applies a custom AI classification taxonomy with 8 distinct categories, scores each account against a weighted ICP rubric co-developed with sales leadership, and outputs a fully enriched file with decision-makers ranked by role and seniority. Accounts below revenue or structure thresholds are flagged and excluded automatically. The contact discovery layer queries multiple enrichment APIs, deduplicates results, and ranks contacts by department relevance, removing manual list curation entirely.</p>
+              <p class="sc-block-text">The classifier reads from five independent sources: the 1.9M-row IRS Business Master File (status code, GEN, affiliation code), a 3,418-row IRS group-exemption registry, CauseIQ (parent/child relationships, subordinate count, organizational type), ProPublica 990 (subordinate filings, group-return flags), and Firecrawl + Claude for structural website signals. Resolution rules are hardcoded into a 10-level priority chain with explicit anti-patterns. GEN=0000 is a placeholder, not a real group exemption. pp_num_subordinates=1 is a standalone org, not a GE parent. Chapter navigation alone without IRS confirmation is never GE. Output is a validated JSON with structure_type, confidence, evidence_chain, primary_pain, secondary_pain, recommended_products, deal_tier, and full classification reasoning.</p>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Tools used</div>
               <div class="tool-chips">
-                <span class="tool-chip">Claude API (classification)</span>
-                <span class="tool-chip">n8n (batch orchestration)</span>
-                <span class="tool-chip">Apollo.io</span>
-                <span class="tool-chip">Hunter.io</span>
-                <span class="tool-chip">Public data APIs</span>
-                <span class="tool-chip">openpyxl (Excel output)</span>
+                <span class="tool-chip">Claude Sonnet 4.6</span>
+                <span class="tool-chip">Supabase Postgres</span>
+                <span class="tool-chip">pg_trgm</span>
+                <span class="tool-chip">IRS BMF (1.9M rows)</span>
+                <span class="tool-chip">IRS GE registry (3.4K rows)</span>
+                <span class="tool-chip">CauseIQ</span>
+                <span class="tool-chip">ProPublica</span>
+                <span class="tool-chip">Prompt caching</span>
+                <span class="tool-chip">Structured outputs</span>
               </div>
             </div>
             <div class="sc-block">
-              <div class="sc-block-label">Collaboration and context</div>
-              <p class="sc-block-text">Classification taxonomy and ICP scoring weights were defined in collaboration with the Head of Sales. Output format was designed for direct CRM import, cutting list prep time from hours to minutes.</p>
+              <div class="sc-block-label">Architecture decisions</div>
+              <p class="sc-block-text">Every classification writes its full evidence chain back to Supabase so the reasoning is auditable after the fact. Hard-coded tie-breakers prevent known real-world misclassification bugs. These rules were reverse-engineered from production misclassifications and documented as regression cases with a dedicated golden-set eval.</p>
             </div>
           </div>
           <div class="sc-block" style="border-radius:8px; padding:14px 16px; background:var(--sand); margin-bottom:0;">
             <div class="sc-block-label">Business impact</div>
             <div class="sc-impact-row">
-              <div class="impact-box"><span class="impact-val">100s</span><span class="impact-lbl">Accounts processed per batch</span></div>
-              <div class="impact-box"><span class="impact-val">Hours to min</span><span class="impact-lbl">List prep time</span></div>
-              <div class="impact-box"><span class="impact-val">8 types</span><span class="impact-lbl">Auto-classified</span></div>
+              <div class="impact-box"><span class="impact-val">256 orgs</span><span class="impact-lbl">Classified end-to-end</span></div>
+              <div class="impact-box"><span class="impact-val">4 classes</span><span class="impact-lbl">With deterministic tie-breakers</span></div>
+              <div class="impact-box"><span class="impact-val">5 sources</span><span class="impact-lbl">Reconciled per decision</span></div>
             </div>
           </div>
         </div>
@@ -952,9 +1032,9 @@
         <div class="sc-header">
           <div>
             <div class="sc-num">project_04</div>
-            <div class="sc-name">AI Sales Knowledge Base</div>
-            <div class="sc-value">Grounds every AI-generated output in the company's real messaging and positioning so the content is accurate, on-brand, and trusted by reps.</div>
-            <p class="sc-problem">AI-generated outreach was too generic for reps to use. The models had no access to actual positioning, competitive angles, objection handling, or case studies, so the output was not being adopted.</p>
+            <div class="sc-name">RAG Knowledge Base for Grounded LLM Outputs</div>
+            <div class="sc-value">A Supabase + pgvector knowledge base that grounds every AI-generated email, pre-call brief, and classification in the company's actual positioning, case studies, and vertical-specific value props. Zero hallucinated case studies.</div>
+            <p class="sc-problem">Out-of-the-box Claude is an excellent writer but has no idea what Crowded's products actually do, which case studies are real, or how to pitch a Group Exemption org differently from a foundation. Without grounding, outputs are confident-sounding nonsense that reps won't send.</p>
           </div>
           <div class="sc-toggle">+</div>
         </div>
@@ -962,29 +1042,30 @@
           <div class="sc-grid">
             <div class="sc-block full">
               <div class="sc-block-label">What I built</div>
-              <p class="sc-block-text">Architected and implemented a retrieval-augmented generation (RAG) system using Supabase with the pgvector extension as the vector store, and Voyage AI for embeddings, selected for quality and cost efficiency. Structured the knowledge base into semantic document types including messaging frameworks, product differentiators, competitive positioning, objection responses, pricing rationale, vertical pain points, and reference case studies. Wrote a custom cosine similarity retrieval function and integrated the knowledge layer into every downstream AI pipeline as a context injection step. Also built a separate interface for rep use during live calls. This system is the foundation all other AI pipelines depend on.</p>
+              <p class="sc-block-text">Structured knowledge base in Supabase with 28 documents typed into seven categories: product, structure, vertical, case_study, playbook, website, competitor. Embeddings via Voyage AI. Custom SQL cosine-similarity match function (match_documents) for retrieval. Context injection is a mandatory step in every downstream pipeline. The Compile Context node blends retrieved docs with CauseIQ, ProPublica, IRS, and website signals before any Claude call. The Quality Gate includes a hallucination-blocking rule that validates every case study referenced in an email body against a known-good allowlist; any invented proof point hard-fails the gate.</p>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Tools used</div>
               <div class="tool-chips">
                 <span class="tool-chip">Supabase + pgvector</span>
-                <span class="tool-chip">Voyage AI (embeddings)</span>
+                <span class="tool-chip">Voyage AI embeddings</span>
                 <span class="tool-chip">Claude API</span>
                 <span class="tool-chip">n8n</span>
                 <span class="tool-chip">SQL (custom match fn)</span>
+                <span class="tool-chip">JSON schema</span>
               </div>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Architecture decisions</div>
-              <p class="sc-block-text">Chose pgvector over dedicated vector databases like Pinecone to avoid infrastructure overhead and keep the stack composable. Built the knowledge base before scaling any outreach automation, because rep trust in the output depends on content specificity, not just model capability.</p>
+              <p class="sc-block-text">Chose pgvector over Pinecone or Weaviate deliberately. Supabase was already the system of record for every row in this pipeline (orgs, contacts, messages, tracking events), so keeping vectors in the same Postgres instance means RAG retrieval can JOIN against live pipeline state in one query. One less vendor, one less credential, one less failure surface.</p>
             </div>
           </div>
           <div class="sc-block" style="border-radius:8px; padding:14px 16px; background:var(--sand); margin-bottom:0;">
             <div class="sc-block-label">Business impact</div>
             <div class="sc-impact-row">
-              <div class="impact-box"><span class="impact-val">Always-on</span><span class="impact-lbl">Brand and voice consistency</span></div>
-              <div class="impact-box"><span class="impact-val">1 source</span><span class="impact-lbl">Of truth for all AI output</span></div>
-              <div class="impact-box"><span class="impact-val">High</span><span class="impact-lbl">Rep trust and adoption</span></div>
+              <div class="impact-box"><span class="impact-val">28 docs</span><span class="impact-lbl">Across 7 semantic categories</span></div>
+              <div class="impact-box"><span class="impact-val">1 source</span><span class="impact-lbl">Of truth for every AI call</span></div>
+              <div class="impact-box"><span class="impact-val">0</span><span class="impact-lbl">Hallucinated case studies in prod</span></div>
             </div>
           </div>
         </div>
@@ -995,9 +1076,9 @@
         <div class="sc-header">
           <div>
             <div class="sc-num">project_05</div>
-            <div class="sc-name">Inbound Lead Triage and Routing System</div>
-            <div class="sc-value">Reads every inbound reply, classifies intent, and routes the lead to the right next step automatically, in under two minutes, with no rep involvement needed.</div>
-            <p class="sc-problem">As outbound volume increased, inbound reply volume became a bottleneck on its own. Reps could not triage replies fast enough at scale, which led to slow response times, missed high-intent leads, and lost pipeline.</p>
+            <div class="sc-name">Reply Intelligence + Click Attribution</div>
+            <div class="sc-value">Reads every inbound email, classifies intent in English or Spanish, detects "left the org" and out-of-office messages separately from real replies, cancels pending drafts for departed contacts, and posts rich context to Slack. A parallel workflow captures every book-a-demo click and attributes it to the exact contact, message, and sequence step within 25 minutes.</div>
+            <p class="sc-problem">Gmail's inbox is the default observability layer for most outbound motions, and it's a bad one. Auto-responders get counted as replies and inflate the numbers. Spanish-language out-of-office messages slip through English-only filters. When a contact leaves their org, the pipeline keeps sending to them for weeks. Click tracking is either bolted on via bit.ly (bad for deliverability) or never done at all.</p>
           </div>
           <div class="sc-toggle">+</div>
         </div>
@@ -1005,29 +1086,31 @@
           <div class="sc-grid">
             <div class="sc-block full">
               <div class="sc-block-label">What I built</div>
-              <p class="sc-block-text">Designed and implemented an AI triage layer that monitors all inbound signals including email replies, form fills, meeting requests, and re-engagement triggers. Each signal passes through a structured classification prompt that outputs one of five intent categories: ready to buy, interested but needs nurturing, objecting, unsubscribe or DNC, or referral. Routing is automatic: high-intent leads go to the meeting scheduler, objections trigger a personalized follow-up sequence, and re-engagements re-enter the pipeline with full historical context. Classification uses structured JSON output, not free text, to keep routing logic deterministic. Intent categories and routing rules were co-designed with the Head of Sales.</p>
+              <p class="sc-block-text">WF7 Reply Handler polls Gmail every 15 minutes, detects OOO messages in English and Spanish, detects "left the org" in both subject and body, cancels pending drafts on LEFT_ORG match, and on real replies fetches the prior sent message (subject, body, step, sent_at) and writes rich metadata to ai_sdr_tracking. WF9 Slack Notifier polls every 10 minutes and renders reply, bounce, left-org, and click events as Slack cards with full context, so the AE sees the entire thread in one message. WF12 HubSpot Click Sync polls every 15 minutes, matches HubSpot page-view events to per-contact UTM parameters written into every CTA link by WF6 at send time, dedupes by HubSpot event ID, and writes click events to ai_sdr_tracking with persona/step/country metadata. WF11 Daily Health Report posts a prose operations report to Slack at 5 PM weekdays covering sends by persona and step, reply context, click details, bounce rate, and tomorrow's expected draft release.</p>
             </div>
             <div class="sc-block">
               <div class="sc-block-label">Tools used</div>
               <div class="tool-chips">
-                <span class="tool-chip">Claude API (classification)</span>
+                <span class="tool-chip">Gmail API</span>
                 <span class="tool-chip">n8n</span>
-                <span class="tool-chip">Lemlist (sequence control)</span>
-                <span class="tool-chip">Revenue Hero (booking)</span>
-                <span class="tool-chip">Apollo.io (CRM update)</span>
+                <span class="tool-chip">Regex intent classification</span>
+                <span class="tool-chip">HubSpot events v3</span>
+                <span class="tool-chip">Supabase Postgres</span>
+                <span class="tool-chip">Slack webhooks</span>
+                <span class="tool-chip">cid/mid URL rewriting</span>
               </div>
             </div>
             <div class="sc-block">
-              <div class="sc-block-label">Collaboration and context</div>
-              <p class="sc-block-text">Intent categories and routing decisions were co-defined with the Head of Sales based on real reply patterns. The routing logic is a configurable decision tree so thresholds and categories can be updated without touching the core pipeline.</p>
+              <div class="sc-block-label">Architecture decisions</div>
+              <p class="sc-block-text">Chose regex over an LLM classifier for reply intent. At 100 messages per poll cycle, an LLM call costs ~$0.50 per run and adds 3–5 seconds of latency. Regex pattern slips are fixed in 30 seconds; LLM misclassifications require prompt rewrites and regression testing. The escalation path is safe by default. Anything not matched by OOO or LEFT_ORG patterns routes to the AE as a real reply.</p>
             </div>
           </div>
           <div class="sc-block" style="border-radius:8px; padding:14px 16px; background:var(--sand); margin-bottom:0;">
             <div class="sc-block-label">Business impact</div>
             <div class="sc-impact-row">
-              <div class="impact-box"><span class="impact-val">Under 2 min</span><span class="impact-lbl">Inbound response time</span></div>
-              <div class="impact-box"><span class="impact-val">Automatic</span><span class="impact-lbl">Routing and re-sequencing</span></div>
-              <div class="impact-box"><span class="impact-val">0</span><span class="impact-lbl">Leads missed in queue</span></div>
+              <div class="impact-box"><span class="impact-val">&lt;25 min</span><span class="impact-lbl">Click → Slack alert latency</span></div>
+              <div class="impact-box"><span class="impact-val">EN + ES</span><span class="impact-lbl">Reply intent detection</span></div>
+              <div class="impact-box"><span class="impact-val">4 event types</span><span class="impact-lbl">Unified in one tracking table</span></div>
             </div>
           </div>
         </div>
@@ -1039,27 +1122,27 @@
     <div class="content-section" id="strategy">
       <div class="cs-eyebrow">// 02 · approach</div>
       <h2>How I think about this work</h2>
-      <p class="body-p">The biggest bottleneck in most sales teams is not skill. It is time. Specifically, the hours that capable people spend on work that a well-designed system could handle. Every project here was built around that idea: identify what the system should own, automate it cleanly, and redirect the rep's energy toward conversations that actually require a human.</p>
+      <p class="body-p">The biggest bottleneck in most sales teams is not skill. It is time. Specifically, the hours that capable people spend on work that a well-designed system could handle. Every project here was built around that idea. Identify what the system should own, automate it cleanly, and redirect the rep's energy toward conversations that actually require a human. The four principles below are the ones I keep hitting in practice.</p>
       <div class="strategy-blocks">
         <div class="strat-block">
           <span class="strat-icon">⚙️</span>
-          <div class="strat-title">Reps should only handle what requires judgment</div>
-          <p class="strat-text">If a task can be defined with clear rules and consistent data, it should not be on a rep's list. Research, email drafting, data entry, and lead triage all fall into that category.</p>
+          <div class="strat-title">One workflow, one responsibility</div>
+          <p class="strat-text">The orchestrator holds no business logic beyond batching and gating. WF1 sources, WF2 enriches, WF3 classifies. Every sub-workflow is independently deployable and independently debuggable. When WF3 misbehaves, I patch WF3 and nothing else changes.</p>
         </div>
         <div class="strat-block">
           <span class="strat-icon">🧠</span>
-          <div class="strat-title">AI output needs real context to be trusted</div>
-          <p class="strat-text">Generic AI content does not get used. I built the sales knowledge system before scaling any outreach automation, because rep adoption depends on specificity. The AI needs to know what the company actually says, not just how to write an email.</p>
+          <div class="strat-title">Additive migrations only</div>
+          <p class="strat-text">Every production fix that touches the database is an ADD-only migration with constraint updates. No renames, no drops, no breaking changes on live data. Six production migrations shipped in April with zero downtime.</p>
         </div>
         <div class="strat-block">
           <span class="strat-icon">📐</span>
-          <div class="strat-title">Systems should compound, not duplicate</div>
-          <p class="strat-text">Each system here is independently functional but designed to feed the next. The classification engine feeds sequencing, which feeds the brief generator, which feeds the inbound router. The architecture scales without rebuilding from scratch.</p>
+          <div class="strat-title">Graceful degradation at every boundary</div>
+          <p class="strat-text">Every external API call has a fallback path. SMTP verifier offline? Send anyway. Firecrawl timeout? Classify from IRS + CauseIQ + ProPublica. Apollo returns stale data? Flag the contact as fallback, don't drop it. No single vendor can block the pipeline.</p>
         </div>
         <div class="strat-block">
           <span class="strat-icon">📊</span>
-          <div class="strat-title">Every build decision ties back to a business outcome</div>
-          <p class="strat-text">The roadmap was built in close collaboration with sales leadership and tied directly to pipeline metrics needed ahead of a fundraising milestone. Technical choices were always evaluated by their effect on rep efficiency and revenue performance, not engineering preference.</p>
+          <div class="strat-title">Prompt caching everywhere Claude is called</div>
+          <p class="strat-text">anthropic-beta: prompt-caching-2024-07-31 with cache_control: ephemeral on system prompts. 6–8K-token knowledge bases cached across every classification call. Material cost reduction for repeated structure, and latency drops to single-digit seconds.</p>
         </div>
       </div>
     </div>
@@ -1071,70 +1154,80 @@
       <div class="stack-grid">
         <div class="stack-card">
           <div class="stack-card-label">AI / LLM</div>
-          <div class="stack-item">Claude API (Anthropic)</div>
-          <div class="stack-item">Voyage AI (embeddings)</div>
-          <div class="stack-item">RAG / pgvector</div>
+          <div class="stack-item">Claude Sonnet 4.6 (Anthropic SDK)</div>
+          <div class="stack-item">Voyage AI embeddings</div>
+          <div class="stack-item">Prompt caching (ephemeral)</div>
           <div class="stack-item">Structured JSON outputs</div>
-          <div class="stack-item">Prompt engineering</div>
+          <div class="stack-item">Python (prompt + agent tooling)</div>
         </div>
         <div class="stack-card">
           <div class="stack-card-label">Automation / Orchestration</div>
-          <div class="stack-item">n8n (self-hosted, Docker)</div>
+          <div class="stack-item">n8n self-hosted (Docker, v4.69.0)</div>
+          <div class="stack-item">n8n Cloud (Apollo Brief Generators)</div>
+          <div class="stack-item">Postgres backend for workflow state</div>
+          <div class="stack-item">Error trigger + centralized log</div>
           <div class="stack-item">Webhook event triggers</div>
-          <div class="stack-item">Batch queue workflows</div>
-          <div class="stack-item">Cloudflare Tunnel</div>
-          <div class="stack-item">Rate-limit handling</div>
         </div>
         <div class="stack-card">
           <div class="stack-card-label">CRM and Sequencing</div>
-          <div class="stack-item">Apollo.io (CRM + sequences)</div>
-          <div class="stack-item">Lemlist (email sequencing)</div>
-          <div class="stack-item">HubSpot (read/search)</div>
+          <div class="stack-item">Apollo (webhooks + custom fields)</div>
+          <div class="stack-item">HubSpot (events v3, 34 properties)</div>
+          <div class="stack-item">Gmail API (OAuth2 per-persona)</div>
+          <div class="stack-item">Lemlist (LinkedIn sequencing)</div>
           <div class="stack-item">Revenue Hero (booking)</div>
-          <div class="stack-item">Custom field writeback</div>
         </div>
         <div class="stack-card">
           <div class="stack-card-label">Data and Enrichment</div>
-          <div class="stack-item">Supabase (vector + relational)</div>
-          <div class="stack-item">Apollo.io enrichment API</div>
-          <div class="stack-item">Hunter.io</div>
-          <div class="stack-item">Firecrawl (web scraping)</div>
-          <div class="stack-item">Public financial and sector APIs</div>
+          <div class="stack-item">Supabase Postgres 17 (Pro tier)</div>
+          <div class="stack-item">pgvector · pg_trgm</div>
+          <div class="stack-item">CauseIQ · ProPublica · Firecrawl</div>
+          <div class="stack-item">1.9M-row IRS BMF</div>
+          <div class="stack-item">Reoon SMTP verification</div>
         </div>
         <div class="stack-card">
           <div class="stack-card-label">Infrastructure</div>
-          <div class="stack-item">Mac Mini (self-hosted)</div>
-          <div class="stack-item">Docker / containers</div>
+          <div class="stack-item">Docker (n8n + Postgres + Firecrawl)</div>
           <div class="stack-item">Cloudflare Tunnel</div>
-          <div class="stack-item">Supabase cloud</div>
+          <div class="stack-item">Self-hosted Firecrawl stack</div>
+          <div class="stack-item">Supabase Storage (public buckets)</div>
+          <div class="stack-item">Python ETL (1.9M-row BMF loader)</div>
         </div>
         <div class="stack-card">
-          <div class="stack-card-label">Output and Tooling</div>
-          <div class="stack-item">openpyxl (Excel output)</div>
-          <div class="stack-item">Claude Projects (rep UI)</div>
-          <div class="stack-item">MCP integrations</div>
-          <div class="stack-item">JSON schema design</div>
+          <div class="stack-card-label">Scripting and Output</div>
+          <div class="stack-item">Python (deploy, ETL, PDF)</div>
+          <div class="stack-item">JavaScript (n8n code nodes)</div>
+          <div class="stack-item">SQL + custom pgvector match fn</div>
+          <div class="stack-item">Slack webhooks</div>
+          <div class="stack-item">ReportLab + Chrome headless PDF</div>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-section" id="cta">
-      <div class="cta-eyebrow">// open to opportunities</div>
-      <div class="cta-heading">Let's work together</div>
-      <p class="cta-sub">Open to roles in GTM Engineering, RevOps, and AI Automation. Available in Miami, Fort Lauderdale, or remote.</p>
+      <div class="cta-eyebrow">// let's talk</div>
+      <div class="cta-heading">I build systems that ship</div>
+      <p class="cta-sub">Looking for GTM Engineering, Applied AI Engineering, or AI Automation roles at Series A–C companies building real product. Happy to run through any of the above systems over a 20-minute call. I'll show live n8n canvases, live Supabase rows, and live Slack alerts, not a slide deck.</p>
       <div class="cta-details">
+        <div class="cta-line">
+          <span class="cta-line-label">Email</span>
+          <a href="mailto:yoad7.cohen@gmail.com">yoad7.cohen@gmail.com</a>
+        </div>
+        <div class="cta-line">
+          <span class="cta-line-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/yoad-cohen-7068b0198/" target="_blank" rel="noopener">linkedin.com/in/yoad-cohen-7068b0198</a>
+        </div>
+        <div class="cta-line">
+          <span class="cta-line-label">GitHub</span>
+          <a href="https://github.com/Yoadcohen" target="_blank" rel="noopener">github.com/Yoadcohen</a>
+        </div>
         <div class="cta-line">
           <span class="cta-line-label">Location</span>
           <span>Miami / Fort Lauderdale, FL &middot; Open to remote</span>
         </div>
         <div class="cta-line">
           <span class="cta-line-label">Focus</span>
-          <span>GTM Engineering &middot; RevOps &middot; AI Automation</span>
-        </div>
-        <div class="cta-line">
-          <span class="cta-line-label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/yoad-cohen-7068b0198/" target="_blank" rel="noopener">linkedin.com/in/yoad-cohen-7068b0198</a>
+          <span>GTM Engineering &middot; Applied AI &middot; AI Automation</span>
         </div>
       </div>
     </div>
@@ -1151,3 +1244,4 @@
 </script>
 </body>
 </html>
+
